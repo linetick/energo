@@ -1,6 +1,8 @@
 services:
+  # MySQL 8.0
   mysql:
     image: mysql:8.0
+    container_name: energo-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: bitrix
@@ -10,24 +12,44 @@ services:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
+    networks:
+      - energo-network
+    restart: unless-stopped
 
+  # Apache + PHP 8.1 (собранный из Dockerfile)
   webserver:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: energo-webserver
     ports:
       - "80:80"
     volumes:
       - ./:/var/www/html
     depends_on:
       - mysql
+    networks:
+      - energo-network
+    restart: unless-stopped
 
+  # phpMyAdmin (опционально)
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: energo-phpmyadmin
     ports:
       - "8080:80"
     environment:
       PMA_HOST: mysql
     depends_on:
       - mysql
+    networks:
+      - energo-network
+    restart: unless-stopped
 
 volumes:
-  mysql_data: 
+  mysql_data:
+    driver: local
+
+networks:
+  energo-network:
+    driver: bridge
