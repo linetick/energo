@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фармэнерго - Главная</title>
+    <link href="./css/news.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <a href="main.html" class="logo">
+            <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
+            <span class="logo-text">Фармэнерго</span>
+          </a>
+
+          <nav class="main-nav">
+            <ul>
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="disclosure.html">Раскрытие информации</a></li>
+              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-contacts">
+            <div class="phone">+7 (XXX) XXX-XX-XX</div>
+            <div class="city-select">
+              <select>
+                <option>Красноярск</option>
+                <option>Санкт-Петербург</option>
+                <option>Новосибирск</option>
+                <option>Екатеринбург</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Новости</h1>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="news-section">
+          <h2 class="section-title">Последние новости</h2>
+          <div class="news-grid">
+            <article class="news-card">
+              <div
+                class="news-img"
+                style="
+                  background-image: url('https://via.placeholder.com/300x200');
+                "
+              ></div>
+              <div class="news-content">
+                <div class="news-date">15 мая 2023</div>
+                <h3 class="news-title">Запуск нового производства</h3>
+                <p>
+                  Компания Фармэнерго запустила новую линию по производству
+                  энергоэффективного оборудования.
+                </p>
+              </div>
+            </article>
+
+            <article class="news-card">
+              <div
+                class="news-img"
+                style="
+                  background-image: url('https://via.placeholder.com/300x200');
+                "
+              ></div>
+              <div class="news-content">
+                <div class="news-date">10 мая 2023</div>
+                <h3 class="news-title">Новые стандарты энергоэффективности</h3>
+                <p>
+                  Наша компания приняла участие в разработке новых отраслевых
+                  стандартов.
+                </p>
+              </div>
+            </article>
+
+            <article class="news-card">
+              <div
+                class="news-img"
+                style="
+                  background-image: url('https://via.placeholder.com/300x200');
+                "
+              ></div>
+              <div class="news-content">
+                <div class="news-date">28 апреля 2023</div>
+                <h3 class="news-title">Экологическая инициатива</h3>
+                <p>
+                  Фармэнерго присоединилась к всемирной инициативе по снижению
+                  углеродного следа.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Компания</h3>
+            <ul>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="disclosure.html">Раскрытие информации</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Контакты</h3>
+            <p>г. Москва, ул. Промышленная, д. 15</p>
+            <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+            <p>Email: info@farmenergo.ru</p>
+            <p>Режим работы: Пн-Пт 9:00-18:00</p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Социальные сети</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-vk"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <h3>Карта</h3>
+            <div class="map-container" id="footer-map">
+              <!-- Здесь будет карта -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Фармэнерго. Все права защищены.</p>
+          <p>
+            <a href="agreement.html">Пользовательское соглашение</a> |
+            <a href="privacy.html">Политика конфиденциальности</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Подключение Font Awesome для иконок -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Подключение API карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
+    <script>
+      // Инициализация карты
+      ymaps.ready(function () {
+        var map = new ymaps.Map("footer-map", {
+          center: [55.76, 37.64],
+          zoom: 14,
+        });
+
+        var placemark = new ymaps.Placemark([55.76, 37.64], {
+          hintContent: "Фармэнерго",
+          balloonContent: "г. Москва, ул. Промышленная, д. 15",
+        });
+
+        map.geoObjects.add(placemark);
+      });
+    </script>
+  </body>
+</html>
