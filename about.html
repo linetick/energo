@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фармэнерго - О компании</title>
+    <style>
+      /* === Общие стили (скопированы из главной страницы для единообразия) === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        color: #333;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* === Шапка === */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-img {
+        height: 40px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2a7f62;
+      }
+
+      .main-nav ul {
+        display: flex;
+      }
+
+      .main-nav li {
+        margin-left: 30px;
+        position: relative;
+      }
+
+      .main-nav a {
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .main-nav a:hover,
+      .main-nav a.active {
+        color: #2a7f62;
+      }
+
+      .header-contacts {
+        display: flex;
+        align-items: center;
+      }
+
+      .phone {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      .city-select {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .city-select select {
+        border: none;
+        background: transparent;
+        appearance: none;
+        padding-right: 15px;
+        cursor: pointer;
+      }
+
+      /* === Основное содержимое === */
+      main {
+        min-height: 70vh;
+        padding: 40px 0;
+      }
+
+      /* Хироу-блок */
+      .hero {
+        background-color: #f5f9f8;
+        padding: 60px 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #2a387f;
+      }
+
+      .hero p {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* Секции about */
+      .about-section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #2a7f62;
+        text-align: center;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .about-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 25px;
+        background-color: #fff;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .about-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #2a387f;
+      }
+
+      /* Команда */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+      }
+
+      .team-member {
+        text-align: center;
+      }
+
+      .team-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: #ddd;
+        margin: 0 auto 15px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .team-member h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .team-member span {
+        font-size: 14px;
+        color: #777;
+      }
+
+      /* === Подвал === */
+      footer {
+        background-color: #2a3b4a;
+        color: #fff;
+        padding: 50px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #2a7f62;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column a:hover {
+        color: #2a7f62;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #3a4b5a;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: #2a7f62;
+      }
+
+      .map-container {
+        height: 200px;
+        background-color: #ddd;
+        margin-top: 15px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #3a4b5a;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      /* === Адаптивность === */
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+          padding: 15px 0;
+        }
+
+        .logo {
+          margin-bottom: 15px;
+        }
+
+        .main-nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .main-nav li {
+          margin: 10px 0;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- === Шапка сайта === -->
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <a href="main.html" class="logo">
+            <img src="logo.png" alt="Фармэнерго" class="logo-img" />
+            <span class="logo-text">Фармэнерго</span>
+          </a>
+
+          <nav class="main-nav">
+            <ul>
+              <li><a href="about.html" class="active">О компании</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="disclosure.html">Раскрытие информации</a></li>
+              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-contacts">
+            <div class="phone">+7 (XXX) XXX-XX-XX</div>
+            <div class="city-select">
+              <select>
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+                <option>Новосибирск</option>
+                <option>Екатеринбург</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- === Основное содержимое === -->
+    <main>
+      <!-- Хироу блок -->
+      <section class="hero">
+        <div class="container">
+          <h1>О компании</h1>
+          <p>
+            Уже более 25 лет «Фармэнерго» внедряет энергоэффективные и
+            инновационные решения для компаний фармацевтической отрасли по всей
+            России и СНГ.
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <!-- Секция «Кто мы» -->
+        <section class="about-section" id="who-we-are">
+          <h2 class="section-title">Кто мы</h2>
+          <p>
+            «Фармэнерго» — мультидисциплинарная инженерная компания, специализирующаяся
+            на проектировании, строительстве и сопровождении объектов фармацевтической
+            промышленности. Мы создаём чистые зоны, технологические линии и системы
+            энергоснабжения, отвечающие самым строгим международным стандартам GMP.
+          </p>
+        </section>
+
+        <!-- Секция «Наша миссия и ценности» -->
+        <section class="about-section" id="mission">
+          <h2 class="section-title">Миссия и ценности</h2>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>Пациент в центре</h3>
+              <p>
+                Все наши решения направлены на повышение доступности безопасных и
+                качественных лекарственных средств для людей.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Инновации</h3>
+              <p>
+                Мы инвестируем в исследования и внедряем передовые технологии в
+                энергетику и фармацевтику.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Экологическая ответственность</h3>
+              <p>
+                Используем «зелёную» энергетику и помогаем клиентам снижать
+                углеродный след.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Надёжность</h3>
+              <p>
+                Мы строим долгосрочные партнёрские отношения и строго соблюдаем
+                сроки и стандарты качества.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Секция «История компании» -->
+        <section class="about-section" id="history">
+          <h2 class="section-title">История компании</h2>
+          <p>
+            Основанная в 1999 году группой инженеров‑энтузиастов, «Фармэнерго» прошла путь
+            от небольшого проектного бюро до одного из лидеров отрасли. Вехи развития:
+          </p>
+          <ul style="margin-top: 20px; list-style: disc inside">
+            <li><strong>1999:</strong> запуск первого энергоэффективного цеха для московского фармзавода.</li>
+            <li><strong>2008:</strong> открытие собственного R&D‑центра.</li>
+            <li><strong>2015:</strong> международная экспансия — проекты в Казахстане и Беларуси.</li>
+            <li><strong>2020:</strong> внедрение корпоративной ESG‑стратегии.</li>
+            <li><strong>2024:</strong> ввод в эксплуатацию завода по производству водородных топливных
+              элементов.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Секция «Команда» -->
+        <section class="about-section" id="team">
+          <h2 class="section-title">Наша команда</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <div
+                class="team-photo"
+                style="background-image: url('https://via.placeholder.com/180');"
+              ></div>
+              <h4>Ирина Кузнецова</h4>
+              <span>Генеральный директор</span>
+            </div>
+            <div class="team-member">
+              <div
+                class="team-photo"
+                style="background-image: url('https://via.placeholder.com/180');"
+              ></div>
+              <h4>Алексей Петров</h4>
+              <span>Технический директор</span>
+            </div>
+            <div class="team-member">
+              <div
+                class="team-photo"
+                style="background-image: url('https://via.placeholder.com/180');"
+              ></div>
+              <h4>Мария Иванова</h4>
+              <span>Директор по качеству</span>
+            </div>
+            <div class="team-member">
+              <div
+                class="team-photo"
+                style="background-image: url('https://via.placeholder.com/180');"
+              ></div>
+              <h4>Сергей Лебедев</h4>
+              <span>Руководитель R&D</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- === Подвал сайта === -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Компания</h3>
+            <ul>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="news.html">Новости</a></li>
+              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="disclosure.html">Раскрытие информации</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Контакты</h3>
+            <p>г. Москва, ул. Промышленная, д. 15</p>
+            <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+            <p>Email: info@farmenergo.ru</p>
+            <p>Режим работы: Пн-Пт 9:00-18:00</p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Социальные сети</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-vk"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <h3>Карта</h3>
+            <div class="map-container" id="footer-map">
+              <!-- Здесь будет карта -->
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Фармэнерго. Все права защищены.</p>
+          <p>
+            <a href="agreement.html">Пользовательское соглашение</a> |
+            <a href="privacy.html">Политика конфиденциальности</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Подключение Font Awesome для иконок (если уже подключено на главной странице, строку можно удалить) -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Подключение API карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
+    <script>
+      // Инициализация карты
+      ymaps.ready(function () {
+        var map = new ymaps.Map("footer-map", {
+          center: [55.76, 37.64],
+          zoom: 14,
+        });
+
+        var placemark = new ymaps.Placemark([55.76, 37.64], {
+          hintContent: "Фармэнерго",
+          balloonContent: "г. Москва, ул. Промышленная, д. 15",
+        });
+
+        map.geoObjects.add(placemark);
+      });
+    </script>
+  </body>
+</html>
