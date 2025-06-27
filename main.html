@@ -123,7 +123,7 @@
       .section-title {
         font-size: 28px;
         margin-bottom: 30px;
-        color: #2a7f62;
+        color: rgb(42, 56, 127);
         text-align: center;
       }
 
@@ -274,6 +274,88 @@
           font-size: 28px;
         }
       }
+
+      /* Стили для нового заголовка */
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title.left-align {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .header-button {
+        margin-top: 0;
+      }
+
+      /* Остальные стили остаются без изменений */
+      .about-section {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+        margin-bottom: 40px;
+      }
+
+      .about-text {
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .feature-button {
+        display: inline-block;
+        color: #2a7f62;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+        padding-bottom: 3px;
+      }
+
+      .about-button {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #2a7f62;
+        color: white;
+        border-radius: 4px;
+        font-weight: 3000;
+        transition: background-color 0.3s;
+        text-decoration: none;
+      }
+
+      /* Адаптивность */
+      @media (max-width: 768px) {
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .header-button {
+          margin-top: 20px;
+          align-self: flex-start;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -281,7 +363,7 @@
     <header>
       <div class="container">
         <div class="header-top">
-          <a href="index.html" class="logo">
+          <a href="main.html" class="logo">
             <img src="logo.png" alt="Фармэнерго" class="logo-img" />
             <span class="logo-text">Фармэнерго</span>
           </a>
@@ -300,7 +382,7 @@
             <div class="phone">+7 (XXX) XXX-XX-XX</div>
             <div class="city-select">
               <select>
-                <option>Москва</option>
+                <option>Красноярск</option>
                 <option>Санкт-Петербург</option>
                 <option>Новосибирск</option>
                 <option>Екатеринбург</option>
@@ -320,6 +402,93 @@
             Лидер в области разработки и внедрения энергоэффективных решений для
             фармацевтической промышленности
           </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="container">
+          <!-- Заголовок и кнопка в одной строке -->
+          <div class="section-header">
+            <h2 class="section-title left-align">О компании</h2>
+            <a href="about.html" class="about-button header-button"
+              >Подробнее</a
+            >
+          </div>
+
+          <div class="about-text">
+            <p>
+              Компания "Фармэнерго" - ведущий разработчик энергетических решений
+              для фармацевтической отрасли с 2010 года. Мы специализируемся на
+              комплексных решениях для повышения энергоэффективности
+              производств.
+            </p>
+          </div>
+
+          <!-- Блок с карточками (остается без изменений) -->
+          <div class="features-grid">
+            <!-- Карточка 1 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Энергоаудит"
+                  alt="Энергетический аудит"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Энергетический аудит</h3>
+                <p>
+                  Комплексное обследование предприятий для выявления резервов
+                  энергосбережения.
+                </p>
+                <a href="services.html#audit" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Модернизация"
+                  alt="Модернизация оборудования"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Модернизация оборудования</h3>
+                <p>
+                  Внедрение современных энергоэффективных технологий на
+                  фармпредприятиях.
+                </p>
+                <a href="services.html#modernization" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Сервис"
+                  alt="Техническое обслуживание"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Техническое обслуживание</h3>
+                <p>
+                  Гарантийное и постгарантийное обслуживание энергетического
+                  оборудования.
+                </p>
+                <a href="services.html#service" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -380,6 +549,260 @@
           </div>
         </section>
       </div>
+
+      <!-- Раскрытие информации -->
+      <section class="about-section">
+        <div class="container">
+          <!-- Заголовок и кнопка в одной строке -->
+          <div class="section-header">
+            <h2 class="section-title left-align">Раскрытие информации</h2>
+            <a href="about.html" class="about-button header-button"
+              >Подробнее</a
+            >
+          </div>
+
+          <div class="about-text">
+            <p>
+              Компания "Фармэнерго" - ведущий разработчик энергетических решений
+              для фармацевтической отрасли с 2010 года. Мы специализируемся на
+              комплексных решениях для повышения энергоэффективности
+              производств.
+            </p>
+          </div>
+
+          <!-- Блок с карточками (остается без изменений) -->
+          <div class="features-grid">
+            <!-- Карточка 1 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Энергоаудит"
+                  alt="Энергетический аудит"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Энергетический аудит</h3>
+                <p>
+                  Комплексное обследование предприятий для выявления резервов
+                  энергосбережения.
+                </p>
+                <a href="services.html#audit" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Модернизация"
+                  alt="Модернизация оборудования"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Модернизация оборудования</h3>
+                <p>
+                  Внедрение современных энергоэффективных технологий на
+                  фармпредприятиях.
+                </p>
+                <a href="services.html#modernization" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Сервис"
+                  alt="Техническое обслуживание"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Техническое обслуживание</h3>
+                <p>
+                  Гарантийное и постгарантийное обслуживание энергетического
+                  оборудования.
+                </p>
+                <a href="services.html#service" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Вакансии-->
+      <section class="about-section">
+        <div class="container">
+          <!-- Заголовок и кнопка в одной строке -->
+          <div class="section-header">
+            <h2 class="section-title left-align">Вакансии</h2>
+            <a href="about.html" class="about-button header-button"
+              >Подробнее</a
+            >
+          </div>
+
+          <div class="about-text">
+            <p>Тут инфа про вакансии.</p>
+          </div>
+
+          <!-- Блок с карточками (остается без изменений) -->
+          <div class="features-grid">
+            <!-- Карточка 1 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Энергоаудит"
+                  alt="Энергетический аудит"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Энергетический аудит</h3>
+                <p>
+                  Комплексное обследование предприятий для выявления резервов
+                  энергосбережения.
+                </p>
+                <a href="services.html#audit" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Модернизация"
+                  alt="Модернизация оборудования"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Модернизация оборудования</h3>
+                <p>
+                  Внедрение современных энергоэффективных технологий на
+                  фармпредприятиях.
+                </p>
+                <a href="services.html#modernization" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Сервис"
+                  alt="Техническое обслуживание"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Техническое обслуживание</h3>
+                <p>
+                  Гарантийное и постгарантийное обслуживание энергетического
+                  оборудования.
+                </p>
+                <a href="services.html#service" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Контакты-->
+      <section class="about-section">
+        <div class="container">
+          <!-- Заголовок и кнопка в одной строке -->
+          <div class="section-header">
+            <h2 class="section-title left-align">Контакты</h2>
+            <a href="about.html" class="about-button header-button"
+              >Подробнее</a
+            >
+          </div>
+
+          <div class="about-text">
+            <p>Тут инфа про Контакты.</p>
+          </div>
+
+          <!-- Блок с карточками (остается без изменений) -->
+          <div class="features-grid">
+            <!-- Карточка 1 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Энергоаудит"
+                  alt="Энергетический аудит"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Энергетический аудит</h3>
+                <p>
+                  Комплексное обследование предприятий для выявления резервов
+                  энергосбережения.
+                </p>
+                <a href="services.html#audit" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Модернизация"
+                  alt="Модернизация оборудования"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Модернизация оборудования</h3>
+                <p>
+                  Внедрение современных энергоэффективных технологий на
+                  фармпредприятиях.
+                </p>
+                <a href="services.html#modernization" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="feature-card">
+              <div class="feature-img-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Сервис"
+                  alt="Техническое обслуживание"
+                  class="feature-img"
+                />
+              </div>
+              <div class="feature-content">
+                <h3>Техническое обслуживание</h3>
+                <p>
+                  Гарантийное и постгарантийное обслуживание энергетического
+                  оборудования.
+                </p>
+                <a href="services.html#service" class="feature-button"
+                  >Подробнее →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Подвал сайта -->
