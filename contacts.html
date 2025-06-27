@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Фармэнерго - О компании</title>
+    <title>Фармэнерго - Контакты</title>
     <style>
-      /* === Общие стили (скопированы из главной страницы для единообразия) === */
+      /* === Общие стили === */
       * {
         margin: 0;
         padding: 0;
@@ -32,6 +32,18 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
+      }
+
+      h2 {
+        font-size: 36px;
+        color: #2a387f;
+        margin-bottom: 30px;
+      }
+
+      h3 {
+        font-size: 24px;
+        color: #2a387f;
+        margin-bottom: 20px;
       }
 
       /* === Шапка === */
@@ -108,98 +120,93 @@
         padding-right: 15px;
         cursor: pointer;
       }
-
-      /* === Основное содержимое === */
-      main {
-        min-height: 70vh;
-        padding: 40px 0;
-      }
-
-      /* Хироу-блок */
-      .hero {
+      
+      /* Основная часть страницы */
+      .contacts-page {
         background-color: #f5f9f8;
         padding: 60px 0;
-        text-align: center;
-        margin-bottom: 40px;
       }
 
-      .hero h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #2a387f;
-      }
-
-      .hero p {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      /* Секции about */
-      .about-section {
-        margin-bottom: 60px;
-      }
-
-      .section-title {
-        font-size: 28px;
-        margin-bottom: 30px;
-        color: #2a7f62;
-        text-align: center;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      .contacts-container {
+        display: flex;
+        flex-wrap: wrap;
         gap: 30px;
       }
 
-      .about-card {
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        padding: 25px;
-        background-color: #fff;
-        transition: transform 0.3s, box-shadow 0.3s;
+      .map-wrapper {
+        flex: 1;
+        min-width: 300px;
       }
 
-      .about-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .about-card h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
-        color: #2a387f;
-      }
-
-      /* Команда */
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 30px;
-      }
-
-      .team-member {
-        text-align: center;
-      }
-
-      .team-photo {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
+      .map-container {
+        height: 400px;
         background-color: #ddd;
-        margin: 0 auto 15px;
-        background-size: cover;
-        background-position: center;
+        border-radius: 8px;
+        overflow: hidden;
       }
 
-      .team-member h4 {
-        font-size: 18px;
-        margin-bottom: 5px;
+      .info-wrapper {
+        flex: 1;
+        min-width: 300px;
       }
 
-      .team-member span {
-        font-size: 14px;
-        color: #777;
+      .contacts-info, .working-hours {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .contacts-info p, .working-hours p {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .feedback-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: #2a7f62;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #1e6b52;
       }
 
       /* === Подвал === */
@@ -250,10 +257,12 @@
         background-color: #2a7f62;
       }
 
-      .map-container {
+      .footer-map-container {
         height: 200px;
         background-color: #ddd;
         margin-top: 15px;
+        border-radius: 8px;
+        overflow: hidden;
       }
 
       .footer-bottom {
@@ -265,6 +274,16 @@
       }
 
       /* === Адаптивность === */
+      @media (max-width: 992px) {
+        .contacts-container {
+          flex-direction: column;
+        }
+        
+        .map-container {
+          height: 350px;
+        }
+      }
+
       @media (max-width: 768px) {
         .header-top {
           flex-direction: column;
@@ -278,14 +297,44 @@
         .main-nav ul {
           flex-direction: column;
           align-items: center;
+          margin: 15px 0;
         }
 
         .main-nav li {
           margin: 10px 0;
         }
 
-        .hero h1 {
+        .header-contacts {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .phone {
+          margin-right: 0;
+        }
+
+        h2 {
           font-size: 28px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contacts-page {
+          padding: 30px 0;
+        }
+        
+        .map-container {
+          height: 250px;
+        }
+        
+        .contacts-info, 
+        .working-hours, 
+        .feedback-form {
+          padding: 20px;
         }
       }
     </style>
@@ -295,7 +344,7 @@
     <header>
       <div class="container">
         <div class="header-top">
-          <a href="index.html" class="logo">
+          <a href="main.html" class="logo">
             <img src="logo.png" alt="Фармэнерго" class="logo-img" />
             <span class="logo-text">Фармэнерго</span>
           </a>
@@ -306,7 +355,7 @@
               <li><a href="news.html">Новости</a></li>
               <li><a href="disclosure.html">Раскрытие информации</a></li>
               <li><a href="vacancies.html">Вакансии</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
+              <li><a href="contacts.html" class="active">Контакты</a></li>
             </ul>
           </nav>
 
@@ -325,47 +374,59 @@
       </div>
     </header>
 
-  <div class="container">
-    <section class="contacts-section">
+  <!-- Основное содержимое -->
+  <main class="contacts-page">
+    <div class="container">
       <h2>Контакты</h2>
       
-      <div class="contacts-info">
-        <h3>Основная контактная информация</h3>
-        <p>Адрес: г. Москва, ул. Промышленная, д. 15</p>
-        <p>Телефон: +7 (495) 123-45-67</p>
-        <p>Email: info@pharmenergo.ru</p>
-      </div>
-
-      <div class="working-hours">
-        <h3>Режим работы</h3>
-        <p>Пн-Пт: 9:00-18:00</p>
-        <p>Сб-Вс: Выходной</p>
-      </div>
-
-      <h3>Карта</h3>
-      <div class="map-container" id="map">
-              <!-- Здесь будет карта -->
-            </div>
+      <div class="contacts-container">
+        <!-- Блок с картой -->
+        <div class="map-wrapper">
+          <div class="map-container" id="map">
+            <!-- Здесь будет карта -->
           </div>
         </div>
-
-      <div class="feedback-form">
-        <h3>Форма обратной связи</h3>
-        <div>
-          <label for="name">Имя</label>
-          <input type="text" id="name" name="name" required>
+        
+        <!-- Блок с контактной информацией -->
+        <div class="info-wrapper">
+          <div class="contacts-info">
+            <h3>Контактная информация</h3>
+            <p><strong>Адрес:</strong> г. Москва, ул. Промышленная, д. 15</p>
+            <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
+            <p><strong>Email:</strong> info@pharmenergo.ru</p>
+          </div>
           
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <div class="working-hours">
+            <h3>Режим работы</h3>
+            <p><strong>Пн-Пт:</strong> 9:00-18:00</p>
+            <p><strong>Сб-Вс:</strong> Выходной</p>
+          </div>
           
-          <label for="message">Сообщение</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-          
-          <button type="button" onclick="alert('Сообщение отправлено!')">Отправить</button>
+          <div class="feedback-form">
+            <h3>Форма обратной связи</h3>
+            <form>
+              <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              
+              <button type="button" class="submit-btn" onclick="alert('Сообщение отправлено!')">Отправить</button>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </main>
 
   <!-- Подвал сайта -->
     <footer>
@@ -399,7 +460,7 @@
             </div>
 
             <h3>Карта</h3>
-            <div class="map-container" id="footer-map">
+            <div class="footer-map-container" id="footer-map">
               <!-- Здесь будет карта -->
             </div>
           </div>
@@ -426,25 +487,24 @@
     <script>
       // Инициализация карты
       ymaps.ready(function () {
-        
-        //Карта основной страницы
+        // Карта основной страницы
         var mainMap = new ymaps.Map("map", {
-        center: [55.738523, 37.639149],
-        zoom: 15
-      });
-      var mainPlacemark = new ymaps.Placemark([55.738523, 37.639149], {
-        hintContent: "Фармэнерго",
-        balloonContent: "г. Москва, ул. Промышленная, д. 15"
-      });
-      mainMap.geoObjects.add(mainPlacemark);
+          center: [55.738523, 37.639149],
+          zoom: 15
+        });
+        var mainPlacemark = new ymaps.Placemark([55.738523, 37.639149], {
+          hintContent: "Фармэнерго",
+          balloonContent: "г. Москва, ул. Промышленная, д. 15"
+        });
+        mainMap.geoObjects.add(mainPlacemark);
 
-        //Карта подвала сайта:
+        // Карта подвала сайта
         var map = new ymaps.Map("footer-map", {
-          center: [55.76, 37.64],
+          center: [55.738523, 37.639149],
           zoom: 14,
         });
 
-        var placemark = new ymaps.Placemark([55.76, 37.64], {
+        var placemark = new ymaps.Placemark([55.738523, 37.639149], {
           hintContent: "Фармэнерго",
           balloonContent: "г. Москва, ул. Промышленная, д. 15",
         });
