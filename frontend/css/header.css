@@ -13,40 +13,81 @@ header {
   z-index: 100;
 }
 
+/* Универсальные формулы сжатия */
+:root {
+  --scale-factor: calc(100vw / 1200); /* Базовый коэффициент масштабирования */
+  --scale-factor-limited: min(
+    max(0.8, var(--scale-factor)),
+    1
+  ); /* Ограничиваем диапазон 0.8-1 */
+}
+
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+  flex-wrap: nowrap; /* Запрещаем перенос строк */
 }
 
 .logo {
   display: flex;
+  align-items: center;
   gap: 10px;
   font-size: 24px;
   font-weight: bold;
   color: #2a7f62;
+  height: 100%;
 }
 
 .logo-img {
-  height: 40px; /* Высота логотипа */
+  height: 70px; /* Высота логотипа */
   width: auto; /* Сохраняет пропорции */
+  display: block;
+  align-self: center;
+  transition: height 0.3s ease;
 }
 
 .logo-text {
   font-size: 24px;
   font-weight: bold;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
   color: #2a7f62;
+  position: relative;
+  top: -2px;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .logo-img {
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 22px;
+  }
+  .main-nav a {
+    font-size: 16px;
+  }
+  .phone {
+    font-size: 14px;
+  }
 }
 
 .header-contacts {
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+  min-width: max-content;
 }
 
 .phone {
   font-weight: bold;
   margin-right: 20px;
+  white-space: nowrap;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .city-select {
@@ -64,20 +105,63 @@ header {
 
 .main-nav ul {
   display: flex;
+  flex-wrap: nowrap; /* Запрещаем перенос пунктов меню */
+  white-space: nowrap; /* Запрещаем перенос текста внутри пунктов */
+  align-items: center;
 }
 
 .main-nav li {
-  margin-left: 30px;
+  margin-left: 20px; /* Уменьшаем отступ между пунктами */
   position: relative;
 }
 
 .main-nav a {
   font-weight: 500;
   transition: color 0.3s;
+  font-size: 18px; /* Уменьшаем размер шрифта, если нужно */
+  padding: 5px 0; /* Добавляем вертикальные отступы */
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .main-nav a:hover {
   color: #2a7f62;
+}
+
+@media (max-width: 1200px) {
+  .logo-img {
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 22px;
+  }
+  .main-nav a {
+    font-size: 16px;
+  }
+  .phone {
+    font-size: calc(16px - (1200px - 100vw) * 0.02); /* Плавное уменьшение */
+    margin-right: calc(20px - (1200px - 100vw) * 0.05);
+  }
+}
+
+@media (max-width: 992px) {
+  .logo-img {
+    height: 50px;
+  }
+  .logo-text {
+    font-size: 20px;
+  }
+  .main-nav li {
+    margin-left: 15px;
+  }
+  .header-contacts {
+    flex-shrink: 0.8; /* Позволяем немного сжиматься */
+  }
+  .phone {
+    font-size: calc(15px - (992px - 100vw) * 0.015);
+    margin-right: calc(15px - (992px - 100vw) * 0.04);
+  }
 }
 
 @media (max-width: 768px) {
@@ -88,22 +172,56 @@ header {
 
   .logo {
     margin-bottom: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 60px; /* Возвращаем увеличенный размер для мобилок */
+    margin-bottom: 10px;
   }
 
   .main-nav ul {
     flex-direction: column;
     align-items: center;
+    white-space: normal;
   }
 
   .main-nav li {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   .header-contacts {
-    margin-top: 15px;
+    flex-shrink: 1; /* Полностью сжимаемся */
+    width: 100%;
+    justify-content: center;
+  }
+
+  .phone {
+    margin-right: 1;
+    margin-left: 1;
+    font-size: 16px;
   }
 
   .hero h1 {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    height: 50px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+  }
+
+  .phone {
+    font-size: 15px;
   }
 }
