@@ -13,21 +13,13 @@ header {
   z-index: 100;
 }
 
-/* Универсальные формулы сжатия */
-:root {
-  --scale-factor: calc(100vw / 1200); /* Базовый коэффициент масштабирования */
-  --scale-factor-limited: min(
-    max(0.8, var(--scale-factor)),
-    1
-  ); /* Ограничиваем диапазон 0.8-1 */
-}
-
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
   flex-wrap: nowrap; /* Запрещаем перенос строк */
+  -webkit-overflow-scrolling: touch;
 }
 
 .logo {
@@ -60,7 +52,7 @@ header {
   transition: font-size 0.3s ease;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .logo-img {
     height: 60px;
   }
@@ -73,13 +65,13 @@ header {
   .phone {
     font-size: 14px;
   }
-}
+} */
 
 .header-contacts {
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
-  min-width: max-content;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
 .phone {
@@ -88,11 +80,15 @@ header {
   white-space: nowrap;
   font-size: 16px;
   transition: all 0.3s ease;
+  flex-shrink: 1;
 }
 
 .city-select {
   position: relative;
   cursor: pointer;
+  flex-shrink: 1;
+  min-width: 10px;
+  transition: all 0.3s ease;
 }
 
 .city-select select {
@@ -101,25 +97,30 @@ header {
   appearance: none;
   padding-right: 15px;
   cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main-nav ul {
   display: flex;
-  flex-wrap: nowrap; /* Запрещаем перенос пунктов меню */
-  white-space: nowrap; /* Запрещаем перенос текста внутри пунктов */
-  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .main-nav li {
-  margin-left: 20px; /* Уменьшаем отступ между пунктами */
+  margin-left: 20px;
   position: relative;
 }
 
 .main-nav a {
   font-weight: 500;
   transition: color 0.3s;
-  font-size: 18px; /* Уменьшаем размер шрифта, если нужно */
-  padding: 5px 0; /* Добавляем вертикальные отступы */
+  font-size: 18px;
+  padding: 5px 0;
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
@@ -127,6 +128,51 @@ header {
 
 .main-nav a:hover {
   color: #2a7f62;
+}
+
+/* Для мобилок */
+
+.mobile-header {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #2a7f62;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Модальное окно */
+.header-top {
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1200px) {
@@ -139,9 +185,31 @@ header {
   .main-nav a {
     font-size: 16px;
   }
+  .header-contacts {
+    margin-left: 15px;
+    display: flex;
+    order: 2;
+    margin-left: auto;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
   .phone {
-    font-size: calc(16px - (1200px - 100vw) * 0.02); /* Плавное уменьшение */
-    margin-right: calc(20px - (1200px - 100vw) * 0.05);
+    font-size: calc(16px - (1200px - 100vw) * 0.015);
+    transform: scale(calc(1 - (1200px - 100vw) * 0.002));
+    transform-origin: left center;
+  }
+  .city-select select {
+    font-size: calc(16px - (1200px - 100vw) * 0.015);
+    padding-right: calc(15px - (1200px - 100vw) * 0.03);
+  }
+  .city-select {
+    min-width: calc(120px - (1200px - 100vw) * 0.1);
+  }
+
+  .header-top {
+    flex-wrap: wrap;
   }
 }
 
@@ -156,55 +224,99 @@ header {
     margin-left: 15px;
   }
   .header-contacts {
-    flex-shrink: 0.8; /* Позволяем немного сжиматься */
+    flex-shrink: 0.8;
   }
   .phone {
-    font-size: calc(15px - (992px - 100vw) * 0.015);
-    margin-right: calc(15px - (992px - 100vw) * 0.04);
+    font-size: calc(15px - (992px - 100vw) * 0.01);
+    transform: scale(calc(0.9 - (992px - 100vw) * 0.001));
+  }
+
+  .city-select select {
+    font-size: calc(15px - (992px - 100vw) * 0.01);
+  }
+  .city-select {
+    min-width: calc(110px - (992px - 100vw) * 0.08);
   }
 }
 
-@media (max-width: 768px) {
-  .header-top {
-    flex-direction: column;
-    padding: 15px 0;
-  }
+@media (max-width: 773px) {
+  @media (max-width: 773px) {
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
 
-  .logo {
-    margin-bottom: 15px;
-    flex-direction: column;
-    text-align: center;
-  }
+    .menu-toggle {
+      display: block;
+    }
 
-  .logo-img {
-    height: 60px; /* Возвращаем увеличенный размер для мобилок */
-    margin-bottom: 10px;
-  }
+    .header-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+      z-index: 999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 80px 20px 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto; /* Добавим прокрутку если меню длинное */
+    }
 
-  .main-nav ul {
-    flex-direction: column;
-    align-items: center;
-    white-space: normal;
-  }
+    .header-top.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
 
-  .main-nav li {
-    margin: 8px 0;
-  }
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-  .header-contacts {
-    flex-shrink: 1; /* Полностью сжимаемся */
-    width: 100%;
-    justify-content: center;
-  }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-  .phone {
-    margin-right: 1;
-    margin-left: 1;
-    font-size: 16px;
-  }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-  .hero h1 {
-    font-size: 28px;
+    /* Остальные стили для мобильной версии */
+    .logo {
+      display: none; /* Скрываем лого в мобильном меню (оно есть в mobile-header) */
+    }
+
+    .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+      white-space: normal;
+      margin-bottom: 30px;
+    }
+
+    .main-nav li {
+      margin: 12px 0;
+    }
+
+    .header-contacts {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone {
+      margin: 0 0 15px 0;
+    }
   }
 }
 
@@ -223,5 +335,12 @@ header {
 
   .phone {
     font-size: 15px;
+  }
+
+  .city-select {
+    min-width: 90px;
+  }
+  .city-select select {
+    font-size: 14px;
   }
 }

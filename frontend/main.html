@@ -12,8 +12,22 @@
     <!-- Шапка сайта -->
     <header>
       <div class="container">
-        <div class="header-top">
+        <!-- Добавляем этот блок для мобильной версии -->
+        <div class="mobile-header">
           <a href="main.html" class="logo">
+            <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
+            <span class="logo-text">Фармэнерго</span>
+          </a>
+          <button class="menu-toggle" aria-label="Открыть меню">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
+        </div>
+
+        <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
+        <div class="header-top mobile-menu">
+          <a href="main.html" class="logo mobile-logo">
             <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
             <span class="logo-text">Фармэнерго</span>
           </a>
@@ -527,5 +541,6 @@
         map.geoObjects.add(placemark);
       });
     </script>
+    <script src="./script/header.js"></script>
   </body>
 </html>
