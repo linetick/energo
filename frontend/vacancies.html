@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Фармэнерго - Главная</title>
+    <title>Фармэнерго - Вакансии</title>
     <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/header.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Шапка сайта -->
@@ -21,7 +22,7 @@
               <li><a href="about.html">О компании</a></li>
               <li><a href="news.html">Новости</a></li>
               <li><a href="disclosure.html">Раскрытие информации</a></li>
-              <li><a href="vacancies.html">Вакансии</a></li>
+              <li><a href="vacancies.html" class="active">Вакансии</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
           </nav>
@@ -45,94 +46,158 @@
     <main>
       <section class="hero">
         <div class="container">
-          <h1>Вакансии</h1>
-          <p>Инфа про вакансии</p>
+          <h1>Вакансии компании Фармэнерго</h1>
+          <p>Присоединяйтесь к нашей команде профессионалов</p>
         </div>
       </section>
 
-      <section class="about-section">
+      <section class="vacancies-section">
         <div class="container">
-          <!-- Заголовок и кнопка в одной строке -->
           <div class="section-header">
-            <h2 class="section-title left-align">О компании</h2>
-            <a href="about.html" class="about-button header-button"
-              >Подробнее</a
-            >
+            <h2 class="section-title left-align">Актуальные вакансии</h2>
           </div>
 
-          <div class="about-text">
-            <p>
-              Компания "Фармэнерго" - ведущий разработчик энергетических решений
-              для фармацевтической отрасли с 2010 года. Мы специализируемся на
-              комплексных решениях для повышения энергоэффективности
-              производств.
-            </p>
+          <div class="vacancies-list">
+            <!-- Вакансия 1 -->
+            <div class="vacancy-card">
+              <div class="vacancy-header">
+                <h3>Инженер-энергетик</h3>
+                <span class="salary">от 80 000 руб.</span>
+              </div>
+              <div class="vacancy-info">
+                <div class="info-item"><strong>Город:</strong> Красноярск</div>
+                <div class="info-item">
+                  <strong>Опыт работы:</strong> от 3 лет
+                </div>
+                <div class="info-item">
+                  <strong>Тип занятости:</strong> Полная
+                </div>
+              </div>
+              <div class="vacancy-description">
+                <p>
+                  Ищем инженера-энергетика для работы над проектами по
+                  энергоэффективности на фармацевтических предприятиях. В
+                  обязанности входит проведение энергоаудитов, разработка
+                  технических решений, контроль за внедрением энергосберегающих
+                  технологий.
+                </p>
+                <h4>Требования:</h4>
+                <ul>
+                  <li>Высшее техническое образование</li>
+                  <li>Опыт работы в энергетике от 3 лет</li>
+                  <li>Знание нормативной документации</li>
+                  <li>Умение работать с AutoCAD</li>
+                </ul>
+              </div>
+              <a href="#apply" class="vacancy-button">Откликнуться</a>
+            </div>
+
+            <!-- Вакансия 2 -->
+            <div class="vacancy-card">
+              <div class="vacancy-header">
+                <h3>Менеджер проектов</h3>
+                <span class="salary">от 100 000 руб.</span>
+              </div>
+              <div class="vacancy-info">
+                <div class="info-item"><strong>Город:</strong> Москва</div>
+                <div class="info-item">
+                  <strong>Опыт работы:</strong> от 5 лет
+                </div>
+                <div class="info-item">
+                  <strong>Тип занятости:</strong> Полная
+                </div>
+              </div>
+              <div class="vacancy-description">
+                <p>
+                  Требуется менеджер проектов для управления комплексными
+                  проектами по модернизации энергетической инфраструктуры
+                  фармацевтических предприятий. Полный цикл управления проектом
+                  от пресейла до сдачи в эксплуатацию.
+                </p>
+                <h4>Требования:</h4>
+                <ul>
+                  <li>Высшее техническое или экономическое образование</li>
+                  <li>Опыт управления проектами от 5 лет</li>
+                  <li>Знание PMI, Agile, Scrum</li>
+                  <li>Опыт работы в энергетике или фармацевтике</li>
+                </ul>
+              </div>
+              <a href="#apply" class="vacancy-button">Откликнуться</a>
+            </div>
+
+            <!-- Вакансия 3 -->
+            <div class="vacancy-card">
+              <div class="vacancy-header">
+                <h3>Техник-электрик</h3>
+                <span class="salary">от 60 000 руб.</span>
+              </div>
+              <div class="vacancy-info">
+                <div class="info-item">
+                  <strong>Город:</strong> Санкт-Петербург
+                </div>
+                <div class="info-item">
+                  <strong>Опыт работы:</strong> от 2 лет
+                </div>
+                <div class="info-item">
+                  <strong>Тип занятости:</strong> Полная
+                </div>
+              </div>
+              <div class="vacancy-description">
+                <p>
+                  В команду требуется техник-электрик для обслуживания и ремонта
+                  электрооборудования на фармацевтических производствах. Работа
+                  в составе мобильной бригады с возможностью командировок.
+                </p>
+                <h4>Требования:</h4>
+                <ul>
+                  <li>Среднее специальное образование</li>
+                  <li>Группа допуска по электробезопасности</li>
+                  <li>Опыт работы с промышленным оборудованием</li>
+                  <li>Готовность к командировкам</li>
+                </ul>
+              </div>
+              <a href="#apply" class="vacancy-button">Откликнуться</a>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <!-- Блок с карточками (остается без изменений) -->
-          <div class="features-grid">
-            <!-- Карточка 1 -->
-            <div class="feature-card">
-              <div class="feature-img-container">
-                <img
-                  src="https://via.placeholder.com/400x250?text=Энергоаудит"
-                  alt="Энергетический аудит"
-                  class="feature-img"
-                />
+      <section class="application-section" id="apply">
+        <div class="container">
+          <h2 class="section-title">Отклик на вакансию</h2>
+          <div class="application-form">
+            <form>
+              <div class="form-group">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" required />
               </div>
-              <div class="feature-content">
-                <h3>Энергетический аудит</h3>
-                <p>
-                  Комплексное обследование предприятий для выявления резервов
-                  энергосбережения.
-                </p>
-                <a href="services.html#audit" class="feature-button"
-                  >Подробнее →</a
-                >
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
               </div>
-            </div>
-
-            <!-- Карточка 2 -->
-            <div class="feature-card">
-              <div class="feature-img-container">
-                <img
-                  src="https://via.placeholder.com/400x250?text=Модернизация"
-                  alt="Модернизация оборудования"
-                  class="feature-img"
-                />
+              <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" required />
               </div>
-              <div class="feature-content">
-                <h3>Модернизация оборудования</h3>
-                <p>
-                  Внедрение современных энергоэффективных технологий на
-                  фармпредприятиях.
-                </p>
-                <a href="services.html#modernization" class="feature-button"
-                  >Подробнее →</a
-                >
+              <div class="form-group">
+                <label for="vacancy">Вакансия</label>
+                <select id="vacancy" required>
+                  <option value="">Выберите вакансию</option>
+                  <option value="Инженер-энергетик">Инженер-энергетик</option>
+                  <option value="Менеджер проектов">Менеджер проектов</option>
+                  <option value="Техник-электрик">Техник-электрик</option>
+                </select>
               </div>
-            </div>
-
-            <!-- Карточка 3 -->
-            <div class="feature-card">
-              <div class="feature-img-container">
-                <img
-                  src="https://via.placeholder.com/400x250?text=Сервис"
-                  alt="Техническое обслуживание"
-                  class="feature-img"
-                />
+              <div class="form-group">
+                <label for="message">Сопроводительное письмо</label>
+                <textarea id="message" rows="5"></textarea>
               </div>
-              <div class="feature-content">
-                <h3>Техническое обслуживание</h3>
-                <p>
-                  Гарантийное и постгарантийное обслуживание энергетического
-                  оборудования.
-                </p>
-                <a href="services.html#service" class="feature-button"
-                  >Подробнее →</a
-                >
+              <div class="form-group">
+                <label for="resume">Резюме (PDF, DOC)</label>
+                <input type="file" id="resume" accept=".pdf,.doc,.docx" />
               </div>
-            </div>
+              <button type="submit" class="submit-button">Отправить</button>
+            </form>
           </div>
         </div>
       </section>

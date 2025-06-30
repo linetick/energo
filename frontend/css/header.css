@@ -1,0 +1,109 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a7f62;
+}
+
+.logo-img {
+  height: 40px; /* Высота логотипа */
+  width: auto; /* Сохраняет пропорции */
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a7f62;
+}
+
+.header-contacts {
+  display: flex;
+  align-items: center;
+}
+
+.phone {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.city-select {
+  position: relative;
+  cursor: pointer;
+}
+
+.city-select select {
+  border: none;
+  background: transparent;
+  appearance: none;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav li {
+  margin-left: 30px;
+  position: relative;
+}
+
+.main-nav a {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #2a7f62;
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav li {
+    margin: 10px 0;
+  }
+
+  .header-contacts {
+    margin-top: 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+}
