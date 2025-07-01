@@ -240,6 +240,16 @@ header {
 }
 
 @media (max-width: 773px) {
+  .logo-phone.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .logo-phone {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
   .mobile-header {
     display: flex;
     justify-content: center; /* Центрируем содержимое */
@@ -290,6 +300,7 @@ header {
     overflow-y: auto;
     box-sizing: border-box;
     transform: translateY(-20px);
+    overflow: hidden;
   }
 
   .header-top.active {
@@ -337,12 +348,22 @@ header {
 
   .mobile-logo {
     position: absolute;
-    top: 25px;
-    left: 50%; /* Центрируем логотип в модальном окне */
+    top: 20px;
+    left: 50%;
     transform: translateX(-50%);
+    width: auto;
     display: flex !important;
+    flex-direction: column;
     align-items: center;
     z-index: 1001;
+    margin-bottom: 30px;
+  }
+  .mobile-logo .logo-text {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  .header-top {
+    padding-top: 100px; /* Увеличиваем отступ для логотипа */
   }
 }
 
