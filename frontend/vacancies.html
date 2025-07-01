@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Фармэнерго - Вакансии</title>
-    <link href="./css/main.css" rel="stylesheet" />
+    <title>Фармэнерго — Вакансии</title>
+
+    <!-- стили сайта -->
+    
     <link href="./css/header.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/vacancies.css" rel="stylesheet" />
   </head>
+
   <body>
     <!-- Шапка сайта -->
     <header>
@@ -37,7 +41,7 @@
               <li><a href="about.html">О компании</a></li>
               <li><a href="news.html">Новости</a></li>
               <li><a href="information.html">Раскрытие информации</a></li>
-              <li><a href="vacancies.html" class="active">Вакансии</a></li>
+              <li><a href="vacancies.html">Вакансии</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
           </nav>
@@ -56,21 +60,35 @@
         </div>
       </div>
     </header>
-
-    <!-- Основное содержимое -->
     <main>
+      <!-- заголовок страницы -->
       <section class="hero">
         <div class="container">
-          <h1>Вакансии компании Фармэнерго</h1>
-          <p>Присоединяйтесь к нашей команде профессионалов</p>
+          <h1>Карьера в «Фармэнерго»</h1>
+          <p>Растём вместе с командой профессионалов</p>
         </div>
       </section>
 
+      <!-- короткое вступление, как у kraspharma.ru -->
+      <section class="intro">
+        <div class="container">
+          <p>
+            Особая корпоративная культура и продуманная политика «Фармэнерго»
+            в отношении сотрудников делают работу в компании престижной и
+            перспективной.
+          </p>
+          <p>
+            Мы создаём условия, позволяющие при максимальной самореализации
+            добиваться высоких результатов. Взамен гарантируем социальную
+            защищённость и достойное материальное вознаграждение.
+          </p>
+        </div>
+      </section>
+
+      <!-- список вакансий -->
       <section class="vacancies-section">
         <div class="container">
-          <div class="section-header">
-            <h2 class="section-title left-align">Актуальные вакансии</h2>
-          </div>
+          <h2 class="section-title left-align">Актуальные вакансии</h2>
 
           <div class="vacancies-list">
             <!-- Вакансия 1 -->
@@ -79,217 +97,145 @@
                 <h3>Инженер-энергетик</h3>
                 <span class="salary">от 80 000 руб.</span>
               </div>
+
               <div class="vacancy-info">
                 <div class="info-item"><strong>Город:</strong> Красноярск</div>
-                <div class="info-item">
-                  <strong>Опыт работы:</strong> от 3 лет
-                </div>
-                <div class="info-item">
-                  <strong>Тип занятости:</strong> Полная
-                </div>
+                <div class="info-item"><strong>Опыт:</strong> 3+ года</div>
+                <div class="info-item"><strong>Занятость:</strong> Полная</div>
               </div>
+
               <div class="vacancy-description">
-                <p>
-                  Ищем инженера-энергетика для работы над проектами по
-                  энергоэффективности на фармацевтических предприятиях. В
-                  обязанности входит проведение энергоаудитов, разработка
-                  технических решений, контроль за внедрением энергосберегающих
-                  технологий.
-                </p>
-                <h4>Требования:</h4>
+                <p><strong>Обязанности:</strong></p>
                 <ul>
-                  <li>Высшее техническое образование</li>
-                  <li>Опыт работы в энергетике от 3 лет</li>
-                  <li>Знание нормативной документации</li>
-                  <li>Умение работать с AutoCAD</li>
+                  <li>Эксплуатация и обслуживание энергосистем предприятия;</li>
+                  <li>Контроль соблюдения энергобезопасности;</li>
+                  <li>Ведение технической документации;</li>
+                  <li>Работа с AutoCAD.</li>
+                </ul>
+
+                <p><strong>Требования:</strong></p>
+                <ul>
+                  <li>Высшее профильное образование;</li>
+                  <li>Опыт работы от 3 лет;</li>
+                  <li>Знание нормативных документов;</li>
+                  <li>Умение работать с чертежами.</li>
                 </ul>
               </div>
-              <a href="#apply" class="vacancy-button">Откликнуться</a>
             </div>
-
+            <!-- Вакансия 2 -->
+            
             <!-- Вакансия 2 -->
             <div class="vacancy-card">
               <div class="vacancy-header">
-                <h3>Менеджер проектов</h3>
-                <span class="salary">от 100 000 руб.</span>
+                <h3>Специалист по закупкам</h3>
+                <span class="salary">от 70 000 руб.</span>
               </div>
+
               <div class="vacancy-info">
-                <div class="info-item"><strong>Город:</strong> Москва</div>
-                <div class="info-item">
-                  <strong>Опыт работы:</strong> от 5 лет
-                </div>
-                <div class="info-item">
-                  <strong>Тип занятости:</strong> Полная
-                </div>
+                <div class="info-item"><strong>Город:</strong> Красноярск</div>
+                <div class="info-item"><strong>Опыт:</strong> 2+ года</div>
+                <div class="info-item"><strong>Занятость:</strong> Полная</div>
               </div>
+
               <div class="vacancy-description">
-                <p>
-                  Требуется менеджер проектов для управления комплексными
-                  проектами по модернизации энергетической инфраструктуры
-                  фармацевтических предприятий. Полный цикл управления проектом
-                  от пресейла до сдачи в эксплуатацию.
-                </p>
-                <h4>Требования:</h4>
+                <p><strong>Обязанности:</strong></p>
                 <ul>
-                  <li>Высшее техническое или экономическое образование</li>
-                  <li>Опыт управления проектами от 5 лет</li>
-                  <li>Знание PMI, Agile, Scrum</li>
-                  <li>Опыт работы в энергетике или фармацевтике</li>
+                  <li>Планирование закупок;</li>
+                  <li>Заключение договоров с поставщиками;</li>
+                  <li>Контроль поставок и качества продукции.</li>
+                </ul>
+
+                <p><strong>Требования:</strong></p>
+                <ul>
+                  <li>Высшее образование;</li>
+                  <li>Опыт работы в закупках от 2 лет;</li>
+                  <li>Навыки ведения переговоров;</li>
+                  <li>Знание 44-ФЗ / 223-ФЗ будет плюсом.</li>
                 </ul>
               </div>
-              <a href="#apply" class="vacancy-button">Откликнуться</a>
             </div>
 
             <!-- Вакансия 3 -->
-            <div class="vacancy-card">
-              <div class="vacancy-header">
-                <h3>Техник-электрик</h3>
-                <span class="salary">от 60 000 руб.</span>
-              </div>
-              <div class="vacancy-info">
-                <div class="info-item">
-                  <strong>Город:</strong> Санкт-Петербург
-                </div>
-                <div class="info-item">
-                  <strong>Опыт работы:</strong> от 2 лет
-                </div>
-                <div class="info-item">
-                  <strong>Тип занятости:</strong> Полная
-                </div>
-              </div>
-              <div class="vacancy-description">
-                <p>
-                  В команду требуется техник-электрик для обслуживания и ремонта
-                  электрооборудования на фармацевтических производствах. Работа
-                  в составе мобильной бригады с возможностью командировок.
-                </p>
-                <h4>Требования:</h4>
-                <ul>
-                  <li>Среднее специальное образование</li>
-                  <li>Группа допуска по электробезопасности</li>
-                  <li>Опыт работы с промышленным оборудованием</li>
-                  <li>Готовность к командировкам</li>
-                </ul>
-              </div>
-              <a href="#apply" class="vacancy-button">Откликнуться</a>
+           <!-- Вакансия 3 -->
+           <div class="vacancy-card">
+            <div class="vacancy-header">
+              <h3>Системный администратор</h3>
+              <span class="salary">от 85 000 руб.</span>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="application-section" id="apply">
-        <div class="container">
-          <h2 class="section-title">Отклик на вакансию</h2>
-          <div class="application-form">
-            <form>
-              <div class="form-group">
-                <label for="name">ФИО</label>
-                <input type="text" id="name" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Телефон</label>
-                <input type="tel" id="phone" required />
-              </div>
-              <div class="form-group">
-                <label for="vacancy">Вакансия</label>
-                <select id="vacancy" required>
-                  <option value="">Выберите вакансию</option>
-                  <option value="Инженер-энергетик">Инженер-энергетик</option>
-                  <option value="Менеджер проектов">Менеджер проектов</option>
-                  <option value="Техник-электрик">Техник-электрик</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Сопроводительное письмо</label>
-                <textarea id="message" rows="5"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="resume">Резюме (PDF, DOC)</label>
-                <input type="file" id="resume" accept=".pdf,.doc,.docx" />
-              </div>
-              <button type="submit" class="submit-button">Отправить</button>
-            </form>
+            <div class="vacancy-info">
+              <div class="info-item"><strong>Город:</strong> Красноярск</div>
+              <div class="info-item"><strong>Опыт:</strong> 3+ года</div>
+              <div class="info-item"><strong>Занятость:</strong> Полная</div>
+            </div>
+
+            <div class="vacancy-description">
+              <p><strong>Обязанности:</strong></p>
+              <ul>
+                <li>Поддержка серверной инфраструктуры;</li>
+                <li>Администрирование сетевого оборудования;</li>
+                <li>Резервное копирование и восстановление данных.</li>
+              </ul>
+
+              <p><strong>Требования:</strong></p>
+              <ul>
+                <li>Опыт администрирования Windows и Linux;</li>
+                <li>Понимание сетевых протоколов;</li>
+                <li>Готовность к дежурствам и командировкам.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Подвал сайта -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column">
-            <h3>Компания</h3>
-            <ul>
-              <li><a href="about.html">О нас</a></li>
-              <li><a href="news.html">Новости</a></li>
-              <li><a href="vacancies.html">Вакансии</a></li>
-              <li><a href="information.html">Раскрытие информации</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Контакты</h3>
-            <p>г. Москва, ул. Промышленная, д. 15</p>
-            <p>Телефон: +7 (XXX) XXX-XX-XX</p>
-            <p>Email: info@farmenergo.ru</p>
-            <p>Режим работы: Пн-Пт 9:00-18:00</p>
-          </div>
-
-          <div class="footer-column">
-            <h3>Социальные сети</h3>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-vk"></i></a>
-              <a href="#"><i class="fab fa-telegram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
+       <!-- Подвал сайта -->
+       <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>Компания</h3>
+              <ul>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="information.html">Раскрытие информации</a></li>
+              </ul>
             </div>
-
-            <h3>Карта</h3>
-            <div class="map-container" id="footer-map">
-              <!-- Здесь будет карта -->
+  
+            <div class="footer-column">
+              <h3>Контакты</h3>
+              <p>г. Москва, ул. Промышленная, д. 15</p>
+              <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+              <p>Email: info@farmenergo.ru</p>
+              <p>Режим работы: Пн-Пт 9:00-18:00</p>
             </div>
+  
+            <div class="footer-column">
+              <h3>Социальные сети</h3>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+  
+              <h3>Карта</h3>
+              <div class="map-container" id="footer-map">
+                <!-- Здесь будет карта -->
+              </div>
+            </div>
+          </div>
+  
+          <div class="footer-bottom">
+            <p>&copy; 2025 Фармэнерго. Все права защищены.</p>
+            <p>
+              <a href="agreement.html">Пользовательское соглашение</a> |
+              <a href="privacy.html">Политика конфиденциальности</a>
+            </p>
           </div>
         </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 Фармэнерго. Все права защищены.</p>
-          <p>
-            <a href="agreement.html">Пользовательское соглашение</a> |
-            <a href="privacy.html">Политика конфиденциальности</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Подключение Font Awesome для иконок -->
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Подключение API карт -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
-    <script>
-      // Инициализация карты
-      ymaps.ready(function () {
-        var map = new ymaps.Map("footer-map", {
-          center: [55.76, 37.64],
-          zoom: 14,
-        });
-
-        var placemark = new ymaps.Placemark([55.76, 37.64], {
-          hintContent: "Фармэнерго",
-          balloonContent: "г. Москва, ул. Промышленная, д. 15",
-        });
-
-        map.geoObjects.add(placemark);
-      });
-    </script>
+      </footer>
     <script src="./script/header.js"></script>
   </body>
 </html>

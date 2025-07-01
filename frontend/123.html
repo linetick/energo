@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/header.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+          <!-- Добавляем этот блок для мобильной версии -->
+          <div class="mobile-header">
+            <button class="menu-toggle" aria-label="Открыть меню">
+              <span class="menu-line"></span>
+              <span class="menu-line"></span>
+              <span class="menu-line"></span>
+            </button>
+            <a href="main.html" class="logo-phone">
+              <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
+              <span class="logo-text">Фармэнерго</span>
+            </a>
+          </div>
+  
+          <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
+          <div class="header-top mobile-menu">
+            <a href="main.html" class="logo mobile-logo">
+              <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
+              <span class="logo-text">Фармэнерго</span>
+            </a>
+  
+            <nav class="main-nav">
+              <ul>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="information.html">Раскрытие информации</a></li>
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+              </ul>
+            </nav>
+  
+            <div class="header-contacts">
+              <div class="phone">+7 (XXX) XXX-XX-XX</div>
+              <div class="city-select">
+                <select>
+                  <option>Красноярск</option>
+                  <option>Санкт-Петербург</option>
+                  <option>Новосибирск</option>
+                  <option>Екатеринбург</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+</body>
+</html>
