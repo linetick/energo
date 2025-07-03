@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Фармэнерго - Главная</title>
     <link href="./css/news.css" rel="stylesheet" />
+    <link href="./css/header.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Шапка сайта -->
     <header>
       <div class="container">
-        <div class="header-top">
-          <a href="main.html" class="logo">
+        <!-- Добавляем этот блок для мобильной версии -->
+        <div class="mobile-header">
+          <button class="menu-toggle" aria-label="Открыть меню">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
+          <a href="main.html" class="logo-phone">
+            <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
+            <span class="logo-text">Фармэнерго</span>
+          </a>
+        </div>
+
+        <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
+        <div class="header-top mobile-menu">
+          <a href="main.html" class="logo mobile-logo">
             <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
             <span class="logo-text">Фармэнерго</span>
           </a>
@@ -20,7 +36,7 @@
             <ul>
               <li><a href="about.html">О компании</a></li>
               <li><a href="news.html">Новости</a></li>
-              <li><a href="disclosure.html">Раскрытие информации</a></li>
+              <li><a href="information.html">Раскрытие информации</a></li>
               <li><a href="vacancies.html">Вакансии</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
@@ -180,5 +196,6 @@
         map.geoObjects.add(placemark);
       });
     </script>
+    <script src="./script/header.js"></script>
   </body>
 </html>
