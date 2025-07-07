@@ -23,7 +23,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  flex-wrap: nowrap; /* Запрещаем перенос строк */
+  flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -38,8 +38,8 @@ header {
 }
 
 .logo-img {
-  height: 70px; /* Высота логотипа */
-  width: auto; /* Сохраняет пропорции */
+  height: 70px;
+  width: auto;
   display: block;
   align-self: center;
   transition: height 0.3s ease;
@@ -121,7 +121,7 @@ header {
   position: relative;
 }
 
-.main-nav .main-nav a   {
+.main-nav .main-nav a {
   font-weight: 500;
   transition: color 0.3s;
   font-size: 18px;
@@ -134,8 +134,6 @@ header {
 .main-nav a:hover {
   color: #2a7f62;
 }
-
-/* Для мобилок */
 
 .mobile-header {
   display: none;
@@ -175,7 +173,6 @@ header {
   bottom: 0;
 }
 
-/* Модальное окно */
 .header-top {
   transition: all 0.3s ease;
 }
@@ -257,7 +254,7 @@ header {
 
   .mobile-header {
     display: flex;
-    justify-content: center; /* Центрируем содержимое */
+    justify-content: center;
     align-items: center;
     padding: 15px 0;
     position: relative;
@@ -266,12 +263,12 @@ header {
 
   .menu-toggle {
     display: block;
-    position: absolute; /* Абсолютное позиционирование */
-    left: 20px; /* Размещаем слева */
+    position: absolute;
+    left: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Вертикальное центрирование */
+    transform: translateY(-50%);
     z-index: 1002;
-    margin-right: auto; /* Сдвигаем к левому краю */
+    margin-right: auto;
   }
 
   .logo-phone {
@@ -282,10 +279,9 @@ header {
     font-weight: bold;
     color: #2a7f62;
     height: 100%;
-    margin: 0 auto; /* Центрируем логотип */
+    margin: 0 auto;
   }
 
-  /* Остальные стили оставляем без изменений */
   .header-top {
     position: fixed;
     top: 0;
@@ -328,7 +324,7 @@ header {
 
   .main-nav ul {
     flex-direction: column;
-    align-items: flex-start; /* Меню выравниваем по левому краю */
+    align-items: flex-start;
     white-space: normal;
     margin-bottom: 30px;
     width: 100%;
@@ -368,7 +364,7 @@ header {
     margin-top: 5px;
   }
   .header-top {
-    padding-top: 100px; /* Увеличиваем отступ для логотипа */
+    padding-top: 100px;
   }
 }
 

@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   
-
     <title>Фармэнерго — Раскрытие информации</title>
 
     <style>
@@ -16,69 +14,138 @@
         --text: #333;
         --paper: #f5f9f8;
       }
-      /* === Сброс === */
-      * { margin:0; padding:0; box-sizing:border-box; font-family:"Arial",sans-serif; }
-      body { color:var(--text); line-height:1.6; background:#fff; }
-      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+      body {
+        color: var(--text);
+        line-height: 1.6;
+        background: #fff;
+      }
+
       main a,
-      .doc-list a
-      {
+      .doc-list a {
         color: var(--green);
         text-decoration: none;
       }
       main a:hover,
-      .doc-list a:hover
-      {
+      .doc-list a:hover {
         text-decoration: underline;
       }
 
-      ul{ list-style:none; }
-      .container{ width:100%; max-width:1200px; margin:0 auto; padding:0 15px; }
-
-
-      /* === Hero === */
-      .hero{ background:var(--paper); padding:60px 0; text-align:center; margin-bottom:40px; }
-      .hero h1{ font-size:36px; margin-bottom:20px; color:var(--blue-dark); }
-      .hero p{ max-width:900px; margin:0 auto; }
-
-      /* === Аккордеон === */
-      .info-section{ margin-bottom:60px; }
-      details.info-cat{ background:#fff; border:1px solid #e0e0e0; border-radius:8px; margin-bottom:20px; overflow:hidden; }
-      details.info-cat summary{ cursor:pointer; padding:18px 25px; position:relative; font-weight:600; user-select:none; list-style:none; }
-      details.info-cat summary::after{ content:"▸"; font-size:1.2rem; position:absolute; right:25px; top:50%; transform:translateY(-50%); transition:transform .25s ease; }
-      details.info-cat[open] summary{ background:var(--green-light); }
-      details.info-cat[open] summary::after{ transform:translateY(-50%) rotate(90deg); }
-      /* Анимируем раскрытие списка */
-      .doc-wrap{ overflow:hidden; }
-      .doc-list{ padding:20px 30px 30px 55px; }
-      .doc-list li{ margin-bottom:10px; position:relative; }
-      .doc-list li::before{ content:"📄"; position:absolute; left:-27px; }
-      .doc-list li:not(:last-child){ border-bottom:1px dashed #e5e5e5; padding-bottom:10px; }
-      /* Скрыта по умолчанию — высота = 0 (управляем JS) */
-      .doc-wrap{ max-height:0; transition:max-height .35s ease; }
-
-      /* === Адаптивность === */
-      @media(max-width:768px){
-        .header-top{ flex-direction:column; padding:15px 0; }
-        .logo{ margin-bottom:15px; }
-        .main-nav ul{ flex-direction:column; align-items:center; }
-        .main-nav li{ margin:10px 0; }
-        .hero h1{ font-size:28px; }
+      ul {
+        list-style: none;
       }
-      
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .hero {
+        background: var(--paper);
+        padding: 60px 0;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: var(--blue-dark);
+      }
+      .hero p {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .info-section {
+        margin-bottom: 60px;
+      }
+      details.info-cat {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      details.info-cat summary {
+        cursor: pointer;
+        padding: 18px 25px;
+        position: relative;
+        font-weight: 600;
+        user-select: none;
+        list-style: none;
+      }
+      details.info-cat summary::after {
+        content: "▸";
+        font-size: 1.2rem;
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.25s ease;
+      }
+      details.info-cat[open] summary {
+        background: var(--green-light);
+      }
+      details.info-cat[open] summary::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+      .doc-wrap {
+        overflow: hidden;
+      }
+      .doc-list {
+        padding: 20px 30px 30px 55px;
+      }
+      .doc-list li {
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .doc-list li::before {
+        content: "📄";
+        position: absolute;
+        left: -27px;
+      }
+      .doc-list li:not(:last-child) {
+        border-bottom: 1px dashed #e5e5e5;
+        padding-bottom: 10px;
+      }
+      .doc-wrap {
+        max-height: 0;
+        transition: max-height 0.35s ease;
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+          padding: 15px 0;
+        }
+        .logo {
+          margin-bottom: 15px;
+        }
+        .main-nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+        .main-nav li {
+          margin: 10px 0;
+        }
+        .hero h1 {
+          font-size: 28px;
+        }
+      }
     </style>
   </head>
   <body>
     <link href="./css/header.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
-   
 
-
-    <!-- ===== Шапка ===== -->
-     <!-- Шапка сайта -->
-     <header>
+    <header>
       <div class="container">
-        <!-- Добавляем этот блок для мобильной версии -->
         <div class="mobile-header">
           <button class="menu-toggle" aria-label="Открыть меню">
             <span class="menu-line"></span>
@@ -91,7 +158,6 @@
           </a>
         </div>
 
-        <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
         <div class="header-top mobile-menu">
           <a href="main.html" class="logo mobile-logo">
             <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
@@ -123,22 +189,24 @@
       </div>
     </header>
 
-    <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="container">
         <h1>Раскрытие информации</h1>
-        <p>Лицензии, отчётность и другие документы, которые мы публикуем в соответствии с законодательством РФ.</p>
+        <p>
+          Лицензии, отчётность и другие документы, которые мы публикуем в
+          соответствии с законодательством РФ.
+        </p>
       </div>
     </section>
 
-    <!-- ===== Контент ===== -->
     <main class="container info-section">
-      <!-- Категория 1 -->
       <details class="info-cat" open>
         <summary>Лицензии и сертификаты</summary>
         <div class="doc-wrap">
           <ul class="doc-list">
-            <li><a href="#">Лицензия на осуществление передачи электроэнергии</a></li>
+            <li>
+              <a href="#">Лицензия на осуществление передачи электроэнергии</a>
+            </li>
             <li><a href="#">Лицензия на пользование недрами</a></li>
             <li><a href="#">Сертификат соответствия ISO 9001</a></li>
             <li><a href="#">Сертификат соответствия ISO 14001</a></li>
@@ -146,7 +214,6 @@
         </div>
       </details>
 
-      <!-- Категория 2 -->
       <details class="info-cat">
         <summary>Передача электроэнергии</summary>
         <div class="doc-wrap">
@@ -158,7 +225,6 @@
         </div>
       </details>
 
-      <!-- Категория 3 -->
       <details class="info-cat">
         <summary>Система водоснабжения</summary>
         <div class="doc-wrap">
@@ -170,7 +236,6 @@
         </div>
       </details>
 
-      <!-- Категория 4 -->
       <details class="info-cat">
         <summary>Прочие документы</summary>
         <div class="doc-wrap">
@@ -183,7 +248,6 @@
       </details>
     </main>
 
-    <!-- ===== Подвал ===== -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -215,9 +279,7 @@
             </div>
 
             <h3>Карта</h3>
-            <div class="map-container" id="footer-map">
-              <!-- Здесь будет карта -->
-            </div>
+            <div class="map-container" id="footer-map"></div>
           </div>
         </div>
 
@@ -231,55 +293,49 @@
       </div>
     </footer>
 
-    <!-- ===== СКРИПТ: плавное раскрытие и автосворачивание других секций ===== -->
     <script>
-      document.querySelectorAll('details.info-cat').forEach((cat) => {
-        const wrapper = cat.querySelector('.doc-wrap');
+      document.querySelectorAll("details.info-cat").forEach((cat) => {
+        const wrapper = cat.querySelector(".doc-wrap");
 
-        // выставляем стартовую высоту при загрузке (для открытых)
-        if (cat.open) wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+        if (cat.open) wrapper.style.maxHeight = wrapper.scrollHeight + "px";
 
-        cat.addEventListener('toggle', () => {
+        cat.addEventListener("toggle", () => {
           if (cat.open) {
-            // скрываем остальные открытые
-            document.querySelectorAll('details.info-cat[open]').forEach((other) => {
-              if (other !== cat) {
-                other.removeAttribute('open');
-              }
-            });
-            // плавно раскрываем
-            wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+            document
+              .querySelectorAll("details.info-cat[open]")
+              .forEach((other) => {
+                if (other !== cat) {
+                  other.removeAttribute("open");
+                }
+              });
+            wrapper.style.maxHeight = wrapper.scrollHeight + "px";
           } else {
-            // сворачиваем
             wrapper.style.maxHeight = null;
           }
         });
       });
     </script>
-     <!-- Подключение Font Awesome для иконок -->
-     <script
-     src="https://kit.fontawesome.com/a076d05399.js"
-     crossorigin="anonymous"
-   ></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
 
-   <!-- Подключение API карт -->
-   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
-   <script>
-     // Инициализация карты
-     ymaps.ready(function () {
-       var map = new ymaps.Map("footer-map", {
-         center: [55.76, 37.64],
-         zoom: 14,
-       });
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
+    <script>
+      ymaps.ready(function () {
+        var map = new ymaps.Map("footer-map", {
+          center: [55.76, 37.64],
+          zoom: 14,
+        });
 
-       var placemark = new ymaps.Placemark([55.76, 37.64], {
-         hintContent: "Фармэнерго",
-         balloonContent: "г. Москва, ул. Промышленная, д. 15",
-       });
+        var placemark = new ymaps.Placemark([55.76, 37.64], {
+          hintContent: "Фармэнерго",
+          balloonContent: "г. Москва, ул. Промышленная, д. 15",
+        });
 
-       map.geoObjects.add(placemark);
-     });
-   </script>
+        map.geoObjects.add(placemark);
+      });
+    </script>
     <script src="./script/header.js"></script>
   </body>
 </html>

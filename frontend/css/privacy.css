@@ -1,4 +1,3 @@
-/* Общие стили */
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ ul {
 }
 
 main {
-  min-height: 70vh;
+  min-height: 20vh;
   padding: 40px 0;
 }
 
@@ -179,148 +178,5 @@ main {
 
   .features-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-.vacancies-section {
-  padding: 60px 0;
-}
-
-.vacancies-list {
-  display: grid;
-  gap: 30px;
-}
-
-.vacancy-card {
-  background: white;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.vacancy-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.vacancy-header h3 {
-  font-size: 22px;
-  color: #2a387f;
-}
-
-.salary {
-  font-weight: bold;
-  color: #2a7f62;
-  font-size: 18px;
-}
-
-.vacancy-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-bottom: 20px;
-  color: #666;
-}
-
-.vacancy-description {
-  margin-bottom: 25px;
-}
-
-.vacancy-description h4 {
-  margin: 15px 0 10px;
-  color: #2a387f;
-}
-
-.vacancy-description ul {
-  margin-left: 20px;
-  list-style-type: disc;
-}
-
-.vacancy-description li {
-  margin-bottom: 5px;
-}
-
-.vacancy-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #2a7f62;
-  color: white;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.vacancy-button:hover {
-  background-color: #1e5e48;
-}
-
-.application-section {
-  background-color: #f5f9f8;
-  padding: 60px 0;
-}
-
-.application-form {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.submit-button {
-  background-color: #2a387f;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-  background-color: #1d2759;
-}
-
-@media (max-width: 768px) {
-  .vacancy-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .salary {
-    margin-top: 10px;
-  }
-
-  .application-form {
-    padding: 20px;
   }
 }

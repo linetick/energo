@@ -9,10 +9,8 @@
     <link href="./css/footer.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- === Шапка сайта === -->
     <header>
       <div class="container">
-        <!-- Добавляем этот блок для мобильной версии -->
         <div class="mobile-header">
           <button class="menu-toggle" aria-label="Открыть меню">
             <span class="menu-line"></span>
@@ -25,7 +23,6 @@
           </a>
         </div>
 
-        <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
         <div class="header-top mobile-menu">
           <a href="main.html" class="logo mobile-logo">
             <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
@@ -57,9 +54,7 @@
       </div>
     </header>
 
-    <!-- === Основное содержимое === -->
     <main>
-      <!-- Хироу блок -->
       <section class="hero">
         <div class="container">
           <h1>О компании</h1>
@@ -72,7 +67,6 @@
       </section>
 
       <div class="container">
-        <!-- Секция «Кто мы» -->
         <section class="about-section" id="who-we-are">
           <h2 class="section-title">Кто мы</h2>
           <p>
@@ -84,7 +78,6 @@
           </p>
         </section>
 
-        <!-- Секция «Наша миссия и ценности» -->
         <section class="about-section" id="mission">
           <h2 class="section-title">Миссия и ценности</h2>
           <div class="about-grid">
@@ -119,7 +112,6 @@
           </div>
         </section>
 
-        <!-- Секция «История компании» -->
         <section class="about-section" id="history">
           <h2 class="section-title">История компании</h2>
           <p>
@@ -147,7 +139,6 @@
           </ul>
         </section>
 
-        <!-- Секция «Команда» -->
         <section class="about-section" id="team">
           <h2 class="section-title">Наша команда</h2>
           <div class="team-grid">
@@ -188,7 +179,6 @@
       </div>
     </main>
 
-    <!-- === Подвал сайта === -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -220,9 +210,7 @@
             </div>
 
             <h3>Карта</h3>
-            <div class="map-container" id="footer-map">
-              <!-- Здесь будет карта -->
-            </div>
+            <div class="map-container" id="footer-map"></div>
           </div>
         </div>
 
@@ -236,13 +224,11 @@
       </div>
     </footer>
 
-    <!-- Подключение Font Awesome для иконок (если уже подключено на главной странице, строку можно удалить) -->
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Подключение API карт -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
     <script>
       // Инициализация карты

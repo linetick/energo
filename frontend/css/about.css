@@ -1,4 +1,3 @@
-/* === Общие стили (скопированы из главной страницы для единообразия) === */
 * {
   margin: 0;
   padding: 0;
@@ -27,13 +26,11 @@ ul {
   padding: 0 15px;
 }
 
-/* === Основное содержимое === */
 main {
   min-height: 70vh;
   padding: 40px 0;
 }
 
-/* Хироу-блок */
 .hero {
   background-color: #f5f9f8;
   padding: 60px 0;
@@ -89,7 +86,6 @@ main {
   color: #2a387f;
 }
 
-/* Команда */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,7 +116,6 @@ main {
   color: #777;
 }
 
-/* === Адаптивность === */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 28px;

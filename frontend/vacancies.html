@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Фармэнерго — Вакансии</title>
 
-    <!-- стили сайта -->
     
     <link href="./css/header.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
@@ -13,10 +12,8 @@
   </head>
 
   <body>
-    <!-- Шапка сайта -->
     <header>
       <div class="container">
-        <!-- Добавляем этот блок для мобильной версии -->
         <div class="mobile-header">
           <button class="menu-toggle" aria-label="Открыть меню">
             <span class="menu-line"></span>
@@ -29,7 +26,6 @@
           </a>
         </div>
 
-        <!-- Оставляем ваш существующий header-top, но добавляем класс для модального окна -->
         <div class="header-top mobile-menu">
           <a href="main.html" class="logo mobile-logo">
             <img src="./image/logo.png" alt="Фармэнерго" class="logo-img" />
@@ -61,7 +57,6 @@
       </div>
     </header>
     <main>
-      <!-- заголовок страницы -->
       <section class="hero">
         <div class="container">
           <h1>Карьера в «Фармэнерго»</h1>
@@ -69,7 +64,6 @@
         </div>
       </section>
 
-      <!-- короткое вступление, как у kraspharma.ru -->
       <section class="intro">
         <div class="container">
           <p>
@@ -85,13 +79,11 @@
         </div>
       </section>
 
-      <!-- список вакансий -->
       <section class="vacancies-section">
         <div class="container">
           <h2 class="section-title left-align">Актуальные вакансии</h2>
 
           <div class="vacancies-list">
-            <!-- Вакансия 1 -->
             <div class="vacancy-card">
               <div class="vacancy-header">
                 <h3>Инженер-энергетик</h3>
@@ -122,9 +114,7 @@
                 </ul>
               </div>
             </div>
-            <!-- Вакансия 2 -->
             
-            <!-- Вакансия 2 -->
             <div class="vacancy-card">
               <div class="vacancy-header">
                 <h3>Специалист по закупкам</h3>
@@ -155,8 +145,6 @@
               </div>
             </div>
 
-            <!-- Вакансия 3 -->
-           <!-- Вакансия 3 -->
            <div class="vacancy-card">
             <div class="vacancy-header">
               <h3>Системный администратор</h3>
@@ -189,7 +177,6 @@
       </section>
     </main>
 
-       <!-- Подвал сайта -->
        <footer>
         <div class="container">
           <div class="footer-content">
@@ -222,7 +209,6 @@
   
               <h3>Карта</h3>
               <div class="map-container" id="footer-map">
-                <!-- Здесь будет карта -->
               </div>
             </div>
           </div>
@@ -236,16 +222,13 @@
           </div>
         </div>
       </footer>
-       <!-- Подключение Font Awesome для иконок -->
     <script
     src="https://kit.fontawesome.com/a076d05399.js"
     crossorigin="anonymous"
   ></script>
 
-  <!-- Подключение API карт -->
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU"></script>
   <script>
-    // Инициализация карты
     ymaps.ready(function () {
       var map = new ymaps.Map("footer-map", {
         center: [55.76, 37.64],
