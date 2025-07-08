@@ -8,12 +8,14 @@ services:
       MYSQL_DATABASE: bitrix
       MYSQL_USER: bitrix
       MYSQL_PASSWORD: bitrix
+      TZ: Asia/Krasnoyarsk
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
       - energo-network
+    command: --innodb_strict_mode=OFF
     restart: unless-stopped
 
   # Apache + PHP 8.1 (собранный из Dockerfile)

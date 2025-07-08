@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между логотипом и текстом */
+}
+
+.logo-img {
+  height: 40px; /* Высота логотипа */
+  width: auto; /* Сохраняет пропорции */
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a7f62;
+}

@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/templates/main/css/main.css" => "17515241873246","/local/templates/main/css/header.css" => "17515241877589","/local/templates/main/css/footer.css" => "17515241871076","/local/templates/main/css/about.css" => "17515241872113","/local/templates/main/css/contacts.css" => "17515241872541","/local/templates/main/css/news.css" => "17515241873236",]; ?>

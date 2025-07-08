@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/templates/main/script/map.js" => "17518966061090","/local/templates/main/script/header.js" => "17518949861222","/local/templates/main/script/accordion.js" => "17518955871060",]; ?>

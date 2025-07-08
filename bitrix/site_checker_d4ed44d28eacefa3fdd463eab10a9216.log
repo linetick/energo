@@ -1,184 +1,20 @@
-2025-Jun-25 12:50:56 Наличие необходимых модулей php (check_php_modules): Fail
-Ошибка! Не установлены требуемые расширения:Free Type TextПоддержка jpeg в GD
-2025-Jun-25 12:50:57 Обязательные параметры PHP (check_php_settings): Fail
-Ошибка! Значение max_input_vars должно быть не ниже 10000. Текущее значение: 1000
-2025-Jun-25 12:50:58 Модули веб-сервера (check_security): Ok
+2025-Jul-07 16:27:55 Наличие необходимых модулей php (check_php_modules): Ok
+Все необходимые модули установлены
+2025-Jul-07 16:27:55 Обязательные параметры PHP (check_php_settings): Ok
+Настройки правильные
+2025-Jul-07 16:27:55 Модули веб-сервера (check_security): Ok
 Конфликтов не выявлено
-2025-Jun-25 12:50:59 Значения переменных сервера (check_server_vars): Ok
+2025-Jul-07 16:27:55 Значения переменных сервера (check_server_vars): Ok
 Корректные
-2025-Jun-25 12:51:00 Сохранение сессии (check_session): Ok
+2025-Jul-07 16:27:55 Сохранение сессии (check_session): Ok
 50% done
-2025-Jun-25 12:51:01 Сохранение сессии (check_session): Ok
-Успешно
-2025-Jun-25 12:51:03 Параметры настройки UTF (mbstring и константа BX_UTF) (check_mbstring): Ok
+2025-Jul-07 16:27:55 Параметры настройки UTF (mbstring и константа BX_UTF) (check_mbstring): Ok
 Правильные. Сайт работает в UTF кодировке
-2025-Jun-25 12:51:04 Служебные скрипты в корне сайта (check_install_scripts): Ok
+2025-Jul-07 16:27:55 Служебные скрипты в корне сайта (check_install_scripts): Ok
 Отсутствуют
-2025-Jun-25 12:51:05 Работа с сокетами (check_socket): Ok
+2025-Jul-07 16:27:55 Работа с сокетами (check_socket): Ok
 Connection to localhost:80	Success
 
 Успешно
-2025-Jun-25 12:51:06 Выполнение агентов на cron (check_bx_crontab): Warning
+2025-Jul-07 16:27:55 Выполнение агентов на cron (check_bx_crontab): Warning
 Замечание. Агенты выполняются на хитах, рекомендуется перевести выполнение агентов на cron
-2025-Jun-25 12:51:09 Лишний вывод в файлах конфигурации (check_dbconn): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:11 Сохранение сессии без UserAgent (check_session_ua): Ok
-50% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:12 Сохранение сессии без UserAgent (check_session_ua): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:13 Настройки сайтов (check_sites): Ok
-Правильные
-2025-Jun-25 12:51:14 Размер стека и pcre.recursion_limit (check_pcre_recursion): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:15 Загрузка файла (check_upload): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:17 Загрузка файла больше 4Мб (check_upload_big): Fail
-Connection to localhost:80	Success
-== Request ==
-POST /bitrix/admin/site_checker.php?test_type=upload_test&unique_id=40d586d7cec3f9c1f7bdb0df58203900&big=1&raw=0 HTTP/1.1
-Host: localhost
-Content-Type: multipart/form-data; boundary=--------4db72adc132c06f7f68d7e444d656fa5
-Content-Length: 4200196
-
-----------4db72adc132c06f7f68d7e444d656fa5
-Content-Disposition: form-data; name="test_file"; filename="site_checker.bin"
-Content-Type: image/gif
-
-()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~����������������������������������������������������������������������������������������������������������������()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~����������������������������������������������������������������������������������������������������������������()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~������������������������������������������������������������������������������������������������������������� ... (4200449 bytes)
-== Response ==
-HTTP/1.1 200 OK
-Date: Wed, 25 Jun 2025 09:51:17 GMT
-Server: Apache/2.4.62 (Debian)
-X-Powered-By: PHP/8.1.32
-Vary: Accept-Encoding
-Content-Length: 316
-Content-Type: text/html; charset=UTF-8
-
-== Body ==
-move_uploaded_file(,/var/www/html/bitrix/tmp/site_checker.bin)=false
-$_FILES=
-Array
-(
-    [test_file] => Array
-        (
-            [name] => site_checker.bin
-            [full_path] => site_checker.bin
-            [type] => 
-            [tmp_name] => 
-            [error] => 1
-            [size] => 0
-        )
-
-)
-
-==========
-
-Ошибка! Не работает
-2025-Jun-25 12:51:18 Загрузка файла через php://input (check_upload_raw): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:19 Передача POST запроса с большим числом параметров (check_post): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:21 Отправка почты (check_mail): Fail
-Ошибка! Не работает
-2025-Jun-25 12:51:22 Отправка почтового сообщения больше 64Кб (check_mail_big): Fail
-Ошибка! Не работает
-2025-Jun-25 12:51:23 Проверка на наличие неотправленных сообщений (check_mail_b_event): Ok
-Успешно
-2025-Jun-25 12:51:24 Внутреннее перенаправление (функция LocalRedirect) (check_localredirect): Ok
-50% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:25 Внутреннее перенаправление (функция LocalRedirect) (check_localredirect): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:27 Фактическое ограничение памяти (check_memory_limit): Ok
-20% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:28 Фактическое ограничение памяти (check_memory_limit): Ok
-40% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:29 Фактическое ограничение памяти (check_memory_limit): Ok
-60% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:30 Фактическое ограничение памяти (check_memory_limit): Ok
-80% done
-Connection to localhost:80	Success
-
-2025-Jun-25 12:51:32 Фактическое ограничение памяти (check_memory_limit): Ok
-Connection to localhost:80	Success
-
-Не менее 256 М
-2025-Jun-25 12:51:33 Работа с файлами кеша (check_cache): Ok
-Успешно
-2025-Jun-25 12:51:35 Доступ к серверу обновлений (check_update): Ok
-Успешно
-2025-Jun-25 12:51:36 HTTP авторизация (check_http_auth): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:38 Создание и запуск файла (check_exec): Ok
-Connection to localhost:80	Success
-
-Успешно
-2025-Jun-25 12:51:39 Функция getimagesize для swf (check_getimagesize): Ok
-Успешно
-2025-Jun-25 12:51:40 Версия MySQL-сервера (check_mysql_bug_version): Ok
-Успешно
-2025-Jun-25 12:51:43 Время на БД и веб-сервере (check_mysql_time): Fail
-Ошибка! Время отличается на 10800 секунд
-2025-Jun-25 12:51:44 Режим работы MySQL (check_mysql_mode): Fail
-Ошибка! innodb_strict_mode=ON, требуется OFF
-2025-Jun-25 12:51:45 Кодировка соединения (check_mysql_connection_charset): Ok
-character_set_connection=utf8mb4, collation_connection=utf8mb4_0900_ai_ci, character_set_results=utf8mb4
-Успешно
-2025-Jun-25 12:51:46 Кодировка базы данных (check_mysql_db_charset): Ok
-CHARSET=utf8mb4, COLLATION=utf8mb4_0900_ai_ci
-Успешно
-2025-Jun-25 12:51:47 Формат хранения таблиц в БД (check_mysql_table_format): Ok
-Успешно
-2025-Jun-25 12:51:49 Кодировки таблиц в БД (check_mysql_table_charset): Ok
-Успешно
-2025-Jun-25 12:51:51 Структура базы данных (check_mysql_table_structure): Ok
-0% done
-2025-Jun-25 12:51:52 Структура базы данных (check_mysql_table_structure): Ok
-4% done
-2025-Jun-25 12:51:54 Структура базы данных (check_mysql_table_structure): Ok
-8% done
-2025-Jun-25 12:51:56 Структура базы данных (check_mysql_table_structure): Ok
-12% done
-2025-Jun-25 12:51:58 Структура базы данных (check_mysql_table_structure): Ok
-16% done
-2025-Jun-25 12:52:00 Структура базы данных (check_mysql_table_structure): Ok
-20% done
-2025-Jun-25 12:52:03 Структура базы данных (check_mysql_table_structure): Ok
-24% done
-2025-Jun-25 12:52:04 Структура базы данных (check_mysql_table_structure): Ok
-28% done
-2025-Jun-25 12:52:08 Структура базы данных (check_mysql_table_structure): Ok
-32% done
-2025-Jun-25 12:52:12 Структура базы данных (check_mysql_table_structure): Ok
-36% done
-2025-Jun-25 12:52:14 Структура базы данных (check_mysql_table_structure): Ok
-40% done
-2025-Jun-25 12:52:23 Структура базы данных (check_mysql_table_structure): Ok
-44% done
-2025-Jun-25 12:52:28 Структура базы данных (check_mysql_table_structure): Ok
-48% done
