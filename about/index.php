@@ -18,7 +18,7 @@ $APPLICATION->SetTitle("О компании");
 
     <div class="container">
     <!-- Секция «Кто мы» -->
-    <section class="about-section" id="who-we-are">
+    <section class="about-sectionn" id="who-we-are">
         <h2 class="section-title">Кто мы</h2>
         <p>
         «Фармэнерго» — мультидисциплинарная инженерная компания,
@@ -30,7 +30,7 @@ $APPLICATION->SetTitle("О компании");
     </section>
 
     <!-- Секция «Наша миссия и ценности» -->
-    <section class="about-section" id="mission">
+    <section class="about-sectionn" id="mission">
         <h2 class="section-title">Миссия и ценности</h2>
         <div class="about-grid">
         <div class="about-card">
@@ -65,7 +65,7 @@ $APPLICATION->SetTitle("О компании");
     </section>
 
     <!-- Секция «История компании» -->
-    <section class="about-section" id="history">
+    <section class="about-sectionn" id="history">
         <h2 class="section-title">История компании</h2>
         <p>
         Основанная в 1999 году группой инженеров‑энтузиастов, «Фармэнерго»
@@ -93,7 +93,7 @@ $APPLICATION->SetTitle("О компании");
     </section>
 
     <!-- Секция «Команда» -->
-    <section class="about-section" id="team">
+    <section class="about-sectionn" id="team">
         <h2 class="section-title">Наша команда</h2>
         <div class="team-grid">
         <div class="team-member">
