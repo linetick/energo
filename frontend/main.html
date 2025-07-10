@@ -53,7 +53,8 @@
         </div>
       </div>
     </header>
-
+    
+    <!-- Основное содержимое -->
     <main>
       <section class="hero">
         <div class="container">
@@ -64,6 +65,27 @@
           </p>
         </div>
       </section>
+            <!-- 🔄 Слайдер -->
+            <section class="slider">
+              <div class="slider-container">
+                <div class="slide">
+                  <img src="ссылка 1" alt="Слайд 1" />
+                </div>
+                <div class="slide">
+                  <img src="ссылка 2" alt="Слайд 2" />
+                </div>
+                <div class="slide">
+                  <img src="ссылка 3" alt="Слайд 3" />
+                </div>
+              </div>
+      
+              <!-- Стрелки -->
+              <button class="prev-slide" id="prev-slide">&#10094;</button>
+              <button class="next-slide" id="next-slide">&#10095;</button>
+      
+              <!-- 🔵 Точки -->
+              <div class="slider-dots" id="slider-dots"></div>
+            </section>
 
       <section class="about-section">
         <div class="container">
@@ -512,6 +534,33 @@
         map.geoObjects.add(placemark);
       });
     </script>
+    <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    const sliderContainer = document.querySelector(".slider-container");
+
+    // Функция для перехода на следующий слайд
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Функция для перехода на предыдущий слайд
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Переход с интервалом
+    setInterval(nextSlide, 5000); // Переключение каждые 3 секунды
+
+    // Обработчики событий для стрелок
+    document.getElementById("next-slide").addEventListener("click", nextSlide);
+    document.getElementById("prev-slide").addEventListener("click", prevSlide);
+    </script>
+
+    
     <script src="./script/header.js"></script>
   </body>
 </html>

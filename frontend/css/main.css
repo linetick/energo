@@ -28,14 +28,14 @@ ul {
 
 main {
   min-height: 70vh;
-  padding: 40px 0;
+  padding: 0 0 40px 0;
 }
 
 .hero {
   background-color: #f5f9f8;
   padding: 60px 0;
   text-align: center;
-  margin-bottom: 40px;
+
 }
 
 .hero h1 {
@@ -96,12 +96,7 @@ main {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-}
-
+/* Заголовки секций */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -119,8 +114,8 @@ main {
 }
 
 .about-section {
-  background-color: #f9f9f9;
-  padding: 60px 0;
+  background-color: #ffffff;
+  padding: 30px 0;
   margin-bottom: 40px;
 }
 
@@ -165,6 +160,91 @@ main {
   text-decoration: none;
 }
 
+/* 🔁 Новый Слайдер */
+.slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.slide:hover img {
+  transform: scale(1.03);
+}
+
+.prev-slide, .next-slide {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2a387f;
+  border: none;
+  font-size: 32px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+  background-color: #2a7f62;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-slide {
+  left: 20px;
+}
+
+.next-slide {
+  right: 20px;
+}
+
+/* 🔵 Точки */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+  background-color: #2a7f62;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
   .section-header {
     flex-direction: column;
@@ -178,5 +258,9 @@ main {
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 28px;
   }
 }
